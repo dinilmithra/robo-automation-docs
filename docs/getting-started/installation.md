@@ -1,25 +1,17 @@
-# Installation
+# Install RoboAutomation
 
-`robo-automation` requires Python 3.12 and Playwright 1.63.0. Install the published package with your project dependency manager. For sibling-workspace development, use an editable path dependency so Python source edits are immediately visible.
+RoboAutomation provides browser execution and evidence features for test projects.
+Appian test authors normally receive these features through RoboAppian.
 
-```powershell
-poetry add --editable ../robo-automation
+For a project using RoboAutomation directly, install the published package with Poetry
+and install the required browser:
+
+```shell
+poetry add robo-automation
+poetry run playwright install chromium
 ```
 
-Editable installs automatically reflect Python source changes, but distribution metadata changes (version, dependencies, or `pytest11` entry points) require an install/refresh.
+Use a supported Python version and your team's approved dependency versions.
+Package installation does not create your business tests or configure application access.
 
-Verify the active source and metadata:
-
-```powershell
-python -c "import importlib.metadata as m, robo_automation; print(m.version('robo-automation')); print(robo_automation.__file__)"
-```
-
-## Bootstrap a standalone development environment
-
-From the workspace root:
-
-```powershell
-py -3.12 .\robo-automation\tools\setup_venv.py
-```
-
-The bootstrap recreates `.venv`, installs Poetry 2.5.1, runs `poetry lock`, and then runs `poetry install`. Running `poetry lock` before installation prevents setup from failing when `pyproject.toml` has changed since the previous lock file was generated.
+Continue with [run a test](for-automation-authors.md).
