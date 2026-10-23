@@ -1,6 +1,5 @@
 site_name: robo-automation
 site_url: https://dinilmithra.github.io/robo-automation-docs/
-repo_url: https://github.com/dinilmithra/robo-automation-docs
 site_description: Generic Playwright and pytest automation framework utilities
 copyright: Copyright &copy; 2026 Dinil Mithra
 
